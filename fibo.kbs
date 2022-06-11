@@ -1,0 +1,17 @@
+# FIBONACCI SERIES
+LET F = 0
+LET S = 1
+LET C = 0
+
+T = F + S
+
+INPUT "How many Numbers : ", C
+
+WHILE C < 10
+	PRINT F
+	T = F + S
+	F = S
+	S = T
+	C = C + 1
+END WHILE
+	
