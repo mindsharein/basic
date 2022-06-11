@@ -1,0 +1,48 @@
+# graphtest.kbs - GRAPHICS TEST in BASIC256
+
+
+# EXECUTE MAIN
+graphsize 800,600
+fastgraphics
+
+call drawBorder()
+
+while true
+	call randomCircle()
+end while
+end
+
+# SUBROUTINES
+
+# DRAWS A BLACK BORDER FOR GRAPH
+subroutine drawBorder()
+	penwidth(2)
+	color black
+	line 0,0,graphWidth,0
+	line graphWidth,0,graphWidth,graphHeight
+	line 0,graphHeight,graphWidth,graphHeight
+	line 0,0,0,graphHeight
+	refresh
+end subroutine
+
+# DRAWS A RANDOM CIRCLE
+subroutine randomCircle()
+	penwidth(1)
+	
+	let r = int(rand*255)
+	let g = int(rand*255)
+	let b = int(rand*255)
+	
+	color rgb(r,g,b), rgb(r,g,b)
+	
+	x = int(rand * graphwidth)
+	y = int(rand * graphheight)
+	r = int(rand * graphwidth/10)
+
+	circle x,y,r
+	refresh
+end subroutine
+
+
+
+
